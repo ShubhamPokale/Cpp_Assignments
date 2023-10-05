@@ -1,0 +1,63 @@
+1. int n1, n2, sum, sub, mul;
+
+void calculate(n1,n2,ref of sum, sub and mul)
+
+    using references make changes into sum, sub and mul variables.
+
+print results into main function
+
+2. int calculate(int, int, int choice)
+
+   choice = 1 return sum
+            2 return sub
+            3 return mul
+
+  
+3. use function pointer to put appr address of function, based on choice
+    call function using function pointer
+
+_________________________________________________________________________________
+
+
+- class, object
+- declaration of class
+- create object of class
+- member functions
+- data members
+- access specifiers
+- getter and setter
+
+- this pointer - 
+
+1. Is implicitly passed in every non-static function of class
+2. It contains address of calling object
+
+
+
+ obj.read_date();  ====>  read_date(&obj)
+
+
+scope of variable -
+
+   block  -  with block
+   local  -  declared in a function, with-in function
+   global -  entire program
+   class  -  with-in class
+   static -  all static and non-static functions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
