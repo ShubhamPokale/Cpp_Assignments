@@ -1,0 +1,104 @@
+color = NULL
+
+
+strcpy(color,"\0");
+
+concrete class - complete class - have definitions of all member functions
+
+abstract class - incomplete class - difinition is one or more functions is missing
+
+class    -    all function defined - single 
+
+base class  -   is-a relationship
+              derived class will get functionalities from base class
+              derived class can have its own functions 
+              derived class can override some functions base class
+
+
+
+abstract base class - is- a relationship (one or more functions are pure virtual ( without definition) and some functions with definitions
+
+
+
+
+pure abstract base class -  interface  (all function are pure virtual functions)
+
+____________________________________________________________________
+
+class employee {
+
+  protected: 
+   char *name;
+   float bsal;
+  public:
+   constructors - default, parameterized
+   destructor
+   display
+   getter, setter 
+   pure virtual function -  float calNetSal()
+};
+
+class clerk: public employee {
+ int overtime;
+ char *dept;
+public:
+  constructors - default, parameterized
+  destructor
+  getter, setter
+  float calNetSal()  -   definition
+      return bsal + (overtime * 1200)
+
+};
+
+class salesman : public employee {
+  float salAmt;
+  char *mgrname;
+public:
+  constructors - default, parameterized
+  destructor
+  getter, setter
+  float calNetSal()  -   definition
+    return bsal + (salAmt * 15 / 100)
+};
+
+class manager : public employee {
+  float bonus;
+  char *dept;
+ public:
+  constructors - default, parameterized
+  destructor
+  getter, setter
+  float calNetSal()  -   definition
+    return bsal + bonus
+
+};
+
+
+int main()
+{
+    create array of objects for 5 objects...
+    print names of employees whose netSal is > 55000.00
+
+    for(i=0;i<5;i++)
+    {
+     if(e[i].calNetSal() > 55000)
+         cout<<e[i].getName();
+    }
+
+   take employee_name from user and print its details
+}
+
+
+_______________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
