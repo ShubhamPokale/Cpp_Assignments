@@ -1,0 +1,36 @@
+Assignment: (HackerRank)
+
+Given a positive integer , do the following:
+
+If 1 <= n <=9, print the lowercase English word corresponding to the number (e.g., one for , two for , etc.).
+If n > 9, print Greater than 9.
+
+Input Format
+
+A single integer, n .
+
+Constraints
+ 1 <= n <= 9
+
+Output Format
+
+If 1<=n<=9, then print the lowercase English word corresponding to the number (e.g., one for 1 , two for  2, etc.); otherwise, print Greater than 9.
+
+
+
+other assignment:
+
+
+1. Take a number and print it is even or odd
+2. Take a number and print it is +ve or -ve
+3. Take a char and print it is vowel or not
+4. Take radius of a circle and print its area.
+5. Take 2 numbers and print largest
+6. Take 3 numbers and print largest
+7. Take selling price and cost price of a product from user. 
+   and print profit or loss amount.
+8. Write a program to take month number from user and print number of days in that   
+   month.
+9. Take a number from user and print it is divisible by 7 or not.
+10. Take month number from user and print month name.
+    "January" for 1,  "February" for 2, "March" for 3 .....

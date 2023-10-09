@@ -1,0 +1,71 @@
+//operatorDemo for bit-wise operators
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+  unsigned int a = 5, b = 9;
+  cout<<"\na = "<<a<<" b = "<<b;
+  cout<<"\n a << 1 "<< (a << 1);
+  cout<<"\n a >> 1 "<< (a >> 1);
+  cout<<"\n a & b "<< (a & b);
+  cout<<"\n a | b "<<(a | b);
+  cout<<"\n a ^ b "<<(a ^ b);
+  cout<<"\n ~a "<<(~a);
+  return 0;
+}
+
+
+
+//Implicit_Explicit_Demo.cpp
+
+#include<iostream>
+using namespace std;
+int main()
+{
+  char c1,c2;
+  int i1,i2;
+  float f1,f2;
+  c1='H';
+  i1=80.56;  /*float converted to int, only 80 assigned to i1  */
+  f1=12.6;
+  c2=i1;    /*int converted to char */
+  i2=f1;    /*float converted to int */
+  /*Now c2 has the character with ASCII value 80, i2 is assigned value 12 */
+  cout<<"\n c2 = "<<int(c2) << " i2 = "<<i2;     //c2 = 80   i2 = 80
+  f2=i1;			/*int converted to float*/
+  i2=c1;			/*char converted to int */
+  /*Now i2 contains ASCII value of character 'H' which is 72*/
+  cout<<"\n f2 = "<<f2<<"  i2 = "<<i2;      //f2 = 80   i2 = 72
+  
+
+  int x=5,y=2;
+  float p,q;
+  p=x/y;
+  cout<<"\n p = "<<p;          //2
+  q=(float)x/y;
+  cout<<" q = "<<q;           //2.5
+  return 0;
+}
+
+_________________________________________________________________________
+
+
+For typecasting - From ebook C++ Primer Pg no 108 Listing 3.14 typecast.cpp
+
+_________________________________________________________________________
+
+Try these expressions -
+
+  int a,b,c,d,e,f,g,h,k;
+  a=8, b=4, c=2, d=1, e=5, f=20;
+   cout<<"exp1 :" << (a+b-(c+d)*3%e+f/9);
+  a=17, b=5, c=6, d=3, e=5;
+   cout<<"exp2 :" <<(a%6-b/2+(c*d-5)/e);
+  a=4, b=5, c=6, d=3, e=5, f=10;
+   cout<<"exp3 :" <<(a*b-c/d<e+f);
+  a=8, b=5, c=8, d=3, e=65, f=10, g=2, h=5, k=2;
+   cout<<"exp4 :" <<(a-b+c/d==e/f-g+h%k);
+  a=8, b=3, c=2, d=3, e=2, f=11;
+   cout<<"exp5 :"<<(a-b||(a-b*c)+d&&e-f%3);

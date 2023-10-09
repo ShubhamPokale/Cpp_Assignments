@@ -1,0 +1,248 @@
+operator overloading on Integer class -
+
+   +, -, *, /, %
+
+ obj2 +=  obj1   ====> obj2.operator+= (obj1)     obj2 = obj2 + obj1
+      -=, *=, /=, %=
+
+ obj3 = (obj2+=obj1)
+
+  if( obj2 > obj1)   bool obj2.operator>(obj1)  
+                     {
+                           if(*ptr > *I.ptr)  return true else return false   
+
+
+  obj1++;     operator++(int n)  { *ptr++; }
+
+
+  ++obj1;     operator++()  
+
+___________________________________________________________________
+
+#include <string.h>
+
+class CString{
+   char *str;
+   int len;  
+
+  public:
+   CString() { len = 2;  str = new char[2]; strcpy(str,"\0");
+
+   CString(int n) { len = n; str = new char[n]; }
+
+   CString(char *p)  { len = strlen(p) ;  str = new char[len]; strcpy(str,p); }
+
+   ~CString() { delete []str;  str = NULL; }
+
+  CString(CString const &o)
+  {
+     len = o.len;
+     str = new char[len];
+     strcpy(str,o.str);
+  }
+
+  const CString &operator=(const CString &o)
+  {
+     delete []str;
+     len = o.len;
+     str = new char[len];
+     strcpy(str,o.str);
+     return *this;
+  }
+
+  void display()
+  {
+     cout<<"String is  :"<<str;
+  }
+};
+
+int main()
+{
+   char name[30];
+
+   cout<<"\n Enter a string...";
+   cin>>name;
+
+   CString obj1;
+   CString obj2(15);
+   CString obj3("Infoway");
+
+   CString obj4(obj3);
+ 
+   obj2 = obj4;
+   return 0;
+}
+
+______________________________________________________________
+
+
+class matrix {
+ 
+   int row, col;
+   int **mat;
+
+   public :
+   matrix() 
+   {
+     int i;
+     row =2;
+     col =2;
+     mat = new int*[row];
+     for(i=0 ; i<row; i++)
+      mat[i] = new int[col];
+
+     for(i=0;i<row;i++)
+     {
+        for(int j = 0;j<col;j++)
+           mat[i][j] = 0;
+
+     }
+   }
+
+   matrix(int r, int c)
+   {
+     int i;
+     row = r;
+     col = c;
+     mat = new int*[row];
+     for(i=0 ; i<row; i++)
+      mat[i] = new int[col];
+
+     for(i=0;i<row;i++)
+     {
+        for(int j = 0;j<col;j++)
+           mat[i][j] = 0;
+
+     }
+   }
+
+   ~matrix()
+   {
+        int i;
+       for(i=0; i<row ; i++)
+        delete []mat[i];
+
+      delete mat;
+   }
+
+
+
+
+   }
+   void input_data()
+   {
+     int i,j;
+     for(i=0 ; i<row ; i++)
+     {
+       for(j=0 ; j<col ; j++)
+       {
+         cout<<"\n Enter number..";
+         cin>>mat[i][j];
+       }
+     }
+   }
+
+   void display()
+   {
+      int i,j;
+      cout<<"\n   Matrix : \n";
+      for(i=0 ; i<row ; i++)
+      {
+         for(j=0 ;j<col ;j++)
+            cout<<mat[i][j];
+
+         cout<<"\n";
+      }
+   }
+
+   matrix(matrix const &m)
+   {
+     row = m.row;
+     col = m.col;
+
+     int i;
+     mat = new int*[row];
+     for(i=0 ; i<row ; i++)
+        mat[i] = new int[col];
+
+
+    for(i=0 ; i<row; i++)
+    {
+        for(int j=0 ; j<col ; j++)
+           mat[i][j] = m.mat[i][j];
+
+    }
+  }
+
+  const matrix &operator = (const matrix &m)
+  {
+      int i;
+     for(i=0; i<row ; i++)
+        delete []mat[i];
+
+     delete mat;
+
+     row = m.row;
+     col = m.col;
+
+    
+     mat = new int*[row];
+     for(i=0 ; i<row; i++)
+      mat[i] = new int[col];
+
+     for(i=0;i<row;i++)
+     {
+        for(int j = 0;j<col;j++)
+           mat[i][j] = 0;
+
+     }
+  }
+
+   
+  
+
+};
+
+
+int main()
+{
+   matrix obj;
+   obj.input_data();
+   obj.display;
+
+   matrix obj2(obj);
+
+   matrix obj3;
+
+   obj3 = obj + obj2;
+
+
+
+
+_________________________________________________
+
+class Integer
+   -  constructor, destructor, copy cons, assig op, +, +=, >, ==
+ 
+
+class CString - 
+  -  constructor, destructor, copy cons, assig op, occ of a char
+
+
+class matrix -
+  -  constructor, destructor, copy cons, assig op, input_data
+
+class student
+
+ - rno, char *name, int mk1
+
+
+
+
+
+
+
+
+
+
+

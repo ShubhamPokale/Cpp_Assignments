@@ -1,0 +1,203 @@
+process's address space -
+   code seg, data seg, stack, heap allocated for a process.
+
+
+#include<iostream>
+using namespace std;
+
+int sum(int,int);        // function declaration / prototype / signature
+
+int main()
+{
+   int num1, num2, res;
+   num1=14, num2 = 24;
+   
+   res = sum(num1,num2);    // function call
+
+   cout<<"\n Res = "<<res;
+   
+   return 0;
+}
+
+//function definition
+int sum(int a, int b)
+{
+  return a+b;
+}
+
+
+_____________________________________________
+
+void keyword - means nothing / unknown
+
+void print_line()
+{
+  
+    cout<<"----------------------------------------------";
+    return;
+}
+_____________________________________________
+
+
+menu driven program 
+
+1. sum of digits of number
+2. reverse of number
+3. factorial of a number
+4. cube of a number
+5. power of a number to number
+6. display line
+7. exit
+
+
+#include<iostream>
+using namespace std;
+
+int sum(int);
+int reverse(int);
+int fact(int);
+int cube(int);
+int pow(int, int);
+void display_line();
+
+int main()
+{
+   int num1, num2, res;
+   char ch;
+   
+   do {
+      display_line();
+   	1. sum of digits of number
+	2. reverse of number
+	3. factorial of a number
+	4. cube of a number
+	5. power of a number to number
+	6. exit
+      display_line();
+        cout<<"\n Enter choice";
+        cin>>ch;
+        if((ch>='1') && (ch<='4'))
+        {
+           cout<<"\n Enter a number";
+           cin>>num1;
+        }
+        if(ch=='5')
+        {
+           cout<<"\n Enter n and m..";
+           cin>>num1;
+           cin>>num2;
+        }
+        switch(ch) {
+           case '1' : res = sum(num1);
+                      cout<<"\n Sum of digits = "<<res;
+                      break;
+           case '2' : cout<<"\n Reverse = "<<reverse(num1);
+                      break;
+           case '3' : res = fact(num1);
+                      cout<<"\n Factorial = "<<res;
+                      break;
+           case '4' : cout<<"\n Cube = "<<cube(num1);   break;
+           case '5' : res = pow(num1, num2);
+                      cout<<"Result = "<<res; 
+                      break;
+           case '6' : break;
+           default  : cout<<"\nInvalid choice...";
+        }//end of switch
+     }while(ch!='6');
+
+    return 0;
+}//end of main
+
+void display_line()
+{
+   cout<<"\n ---------------------------------------------";
+}
+
+int sum(int n)
+{
+  int s = 0,rem;
+  while(n > 0)
+  {
+     rem = n % 10;
+     s = s + rem;
+     n = n / 10;
+  }
+  retrun s;
+}
+
+
+int reverse(int n)
+{
+  int rev_num = 0, rem;
+  while(n>0)
+  {
+    rem = n % 10;
+    rev_no = rev_no * 10 + rem;
+    n = n /10;
+  }
+  retrun rev_no;
+}
+
+int fact(int n)
+{
+   int i, fact = 1;
+   for(i=1;i<=n;i++)
+     fact = fact * i;
+     
+   retrun fact;
+}
+
+int cube(int n)
+{
+    return n*n*n;
+}
+
+int pow(int n, int m)   
+{
+    int i, p=1;
+
+    for(i=1;i<=m;i++)  
+      p = p * n;      
+
+    return p;
+}
+
+                        
+
+int isDigit(char ch)
+{
+   if((ch>='0') && (ch<='9'))
+      return 1;
+   else
+      return 0;
+}
+
+int isAlpha(char ch)
+{
+   if(((ch>='a') && (ch<='z'))  ||  ((ch>='A') && (ch<='Z')))
+      return 1;
+   else
+      return 0;
+}
+
+___________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

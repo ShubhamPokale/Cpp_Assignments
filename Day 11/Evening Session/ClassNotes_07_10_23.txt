@@ -1,0 +1,52 @@
+1. Define following class and add functionalities
+
+Class A
+{
+     int data;
+};
+
+the above given is just a suggestion for class definition. Complete the class and function definitions so that you can do following calculations on objects of that class(write constructors and destructors)
+
+Assume.
+A a1,a2,a3;   //objects of class A
+ 
+a1=a2;
+a1=a2*a3;
+a1=10;
+
+2. Consider an example of book shop which sells books and video tapes. It is modeled by book and tape classes. These two classes are inherited from the base class called media. The media class has common data members such as title and publication. The book class has data members for storing a number of pages in a book and tape class has the playing time in a tape. Each class will have the member functions such as read ( ) and show ( ). 
+
+3. Write an inheritance/polymorphism class structure for Shape class to support below main function:
+
+int main()
+{
+	//This line should give compile time error like "Cant create object of abstract class" as we can't draw Shape. 
+	Shape *shape = new Shape();
+		
+	//My Triangle's width is 10 & height is 3 
+	Shape *triangleShape = new Triangle(10, 3);
+	
+	//Triangle's area formula is (width * height)/2 
+	cout<<"Area = "<<triangleShape->getArea();
+	
+	delete triangleShape;
+
+	//My Circle's centre is at 2,2 (x,y) and radius of 3 and it is-a Shape
+	Circle c1(2,2,3);
+	Circle c2(3,3,8);
+	
+	//Please check both circles areas to verify whether they are equal or not
+	//Circle's area formula is (3.14 * radius * radius)
+	if(c1 == c2)
+		cout<<"Both circle are of same area"<<endl;
+	else
+		cout<<"Both circle are of different area"<<endl;	
+}
+
+
+4. A bank maintains two kinds of account for customers, one called as saving account and the other as current account. The saving account provides compound interest & withdrawal facility, but no cheque book facility The current account provides cheque book facility but no interest. Current account holders should also maintain a minimum balance and if the balance falls below this level, a service charge is imposed. Create a class account that stores customer name, accountnumber and type of account. From this derive the class cur_acct and sav_acct to make them more specific to their requirement. Include necessary member functions in order to achieve the following tasks.
+
+(a)Accept deposit from a customer and update the balance.
+(b)Display the balance
+(c)Compute and deposit interest
+(d)Permit withdrawal and update the balance
