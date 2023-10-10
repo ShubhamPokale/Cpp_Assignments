@@ -1,139 +1,87 @@
+//File name :
+//Author :Shubham Pokale
+//Email address :shubham.pokale2001@gmail.com
+//Assignment no. :
+//Description :
+//Last changed :
 #include<iostream>
+#include<string.h>
 using namespace std;
 
-class matrix {
+class CString{
+private: 
 
-   int row, col;
-   int **mat;
+char *str;     // Why Char , Why Int ?? At the end of the day its gonna store an address ony , then why the data type ?? 
+int len; 
 
-   public :
-   matrix()
-   {
-     int i;
-     row =2;
-     col =2;
-     mat = new int*[row];
-     for(i=0 ; i<row; i++)
-      mat[i] = new int[col];
+public :
 
-     for(i=0;i<row;i++)
-     {
-        for(int j = 0;j<col;j++)
-           mat[i][j] = 0;
-
-     }
+CString()
+   { 
+      len=2; 
+      str =new char[2];
+      strcpy(str,"\0"); 
    }
 
-   matrix(int r, int c)
+CString(int n)
    {
-     int i;
-     row = r;
-     col = c;
-     mat = new int*[row];
-     for(i=0 ; i<row; i++)
-      mat[i] = new int[col];
-
-     for(i=0;i<row;i++)
-     {
-        for(int j = 0;j<col;j++)
-           mat[i][j] = 0;
-
-     }
+      len=n;
+      str = new char[n];
    }
 
-   ~matrix()
+CString(char *p)
    {
-        int i;
-       for(i=0; i<row ; i++)
-        delete []mat[i];
+      len = strlen(p);
+      str = new char[len];
+      strcpy(str,p);
+   }
+   // Destructor : Used to free the memory allocated on heap
+~CString()
+   {
+      delete []str;
+      str =NULL; 
+   }
+//Copy Constructor 
 
-      delete mat;
+CString(CString const&o)  // obj1(obj2)
+   {
+      len = o.len; 
+      str = new char[len];
+      strcpy(str,o.str);
    }
 
-   void input_data()
-   {
-     int i,j;
-     for(i=0 ; i<row ; i++)
-     {
-       for(j=0 ; j<col ; j++)
-       {
-         cout<<"\n Enter number..";
-         cin>>mat[i][j];
-       }
-     }
-   }
 
+
+
+// getter function 
    void display()
-   {
-      int i,j;
-      cout<<"\n   Matrix : \n";
-      for(i=0 ; i<row ; i++)
       {
-         for(j=0 ;j<col ;j++)
-            cout<<mat[i][j]<<"   ";
-
-         cout<<"\n";
+         cout << str; 
+         cout << "\t"<< len;
       }
+// Assignment operator
+
+CString operator=(CString const &o)
+   {
+      delete []str;
+      len =o.len;
+      str= new char[len];
+      strcpy(str,o.str);
+      return *this; 
    }
 
-   matrix(matrix const &m)
-   {
-     row = m.row;
-     col = m.col;
-
-     int i;
-     mat = new int*[row];
-     for(i=0 ; i<row ; i++)
-        mat[i] = new int[col];
 
 
-    for(i=0 ; i<row; i++)
-    {
-        for(int j=0 ; j<col ; j++)
-           mat[i][j] = m.mat[i][j];
-
-    }
-  }
-
-  const matrix &operator = (const matrix &m)
-  {
-      int i;
-     for(i=0; i<row ; i++)
-        delete []mat[i];
-
-     delete mat;
-
-     row = m.row;
-     col = m.col;
 
 
-     mat = new int*[row];
-     for(i=0 ; i<row; i++)
-      mat[i] = new int[col];
-
-     for(i=0;i<row;i++)
-     {
-        for(int j = 0;j<col;j++)
-           mat[i][j] = m.mat[i][j];
-
-     }
-     return *this;
-  }
 };
 
 
-
 int main()
-{
-   matrix obj, obj3;
-   obj.input_data();
-   obj.display();
+{  char arr[]= "Geeksforgeeks";
 
-   matrix obj2(obj);
+   
 
-   obj2.display();
+ return 0;
 
-   obj3 = obj2;
-   obj3.display();
-   return 0;
 }
